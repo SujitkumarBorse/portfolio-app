@@ -55,9 +55,13 @@ Replace `YOUR_REPO_NAME` in the deploy configuration:
 1. Go to your repository on GitHub
 2. Click on "Settings" tab
 3. Scroll down to "Pages" section
-4. Under "Source", select "Deploy from a branch"
-5. Choose "gh-pages" branch and "/ (root)" folder
+4. Under "Source", select "GitHub Actions" (recommended) or "Deploy from a branch"
+5. If using "Deploy from a branch", choose "gh-pages" branch and "/ (root)" folder
 6. Click "Save"
+
+**Note**: The repository is configured with two deployment workflows:
+- `deploy.yml`: Uses GitHub Actions Pages (modern approach)
+- `deploy-gh-pages.yml`: Uses traditional gh-pages branch approach
 
 ## Step 5: Deploy
 
