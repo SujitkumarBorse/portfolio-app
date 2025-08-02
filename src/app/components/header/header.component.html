@@ -1,0 +1,23 @@
+<header class="header" [class.scrolled]="isScrolled">
+    <div class="header-container">
+        <div class="logo" (click)="scrollToSection('home')">
+            <h2>Sujitkumar Borse</h2>
+            <span class="title">Angular Developer</span>
+        </div>
+        <nav class="nav" [class.mobile-open]="isMobileMenuOpen">
+            <ul class="nav-list">
+                <li><a href="#home" class="nav-link" [class.active]="activeSection === 'home'" (click)="scrollToSection('home')">Home</a></li>
+                <li><a href="#about" class="nav-link" [class.active]="activeSection === 'about'" (click)="scrollToSection('about')">About</a></li>
+                <li><a href="#skills" class="nav-link" [class.active]="activeSection === 'skills'" (click)="scrollToSection('skills')">Skills</a></li>
+                <li><a href="#experience" class="nav-link" [class.active]="activeSection === 'experience'" (click)="scrollToSection('experience')">Experience</a></li>
+                <li><a href="#projects" class="nav-link" [class.active]="activeSection === 'projects'" (click)="scrollToSection('projects')">Projects</a></li>
+                <li><a href="#contact" class="nav-link" [class.active]="activeSection === 'contact'" (click)="scrollToSection('contact')">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-toggle" [class.active]="isMobileMenuOpen" (click)="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</header>
