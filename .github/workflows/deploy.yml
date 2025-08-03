@@ -26,27 +26,20 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '18'
-        cache: 'npm'
-        cache-dependency-path: portfolio-app/package-lock.json
         
     - name: Install dependencies
       run: |
         cd portfolio-app
-        npm ci
-        
-    - name: Check Angular CLI
-      run: |
-        cd portfolio-app
-        npx ng version
+        npm install
         
     - name: Build
       run: |
         cd portfolio-app
-        npm run build:prod
+        npx ng build --configuration production --base-href=/
         
     - name: Copy CNAME
       run: |
-        cp src/CNAME dist/portfolio-app/
+        cp portfolio-app/src/CNAME portfolio-app/dist/portfolio-app/
         
     - name: Setup Pages
       uses: actions/configure-pages@v4
