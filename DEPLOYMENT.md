@@ -82,9 +82,56 @@ Your portfolio will be available at:
 - If assets don't load, check that the paths are relative
 - The first deployment might take a few minutes to become available
 
-## Custom Domain (Optional)
+## Custom Domain Setup
 
-If you want to use a custom domain:
-1. Add a CNAME file in your `src` folder with your domain
-2. Configure your domain's DNS settings
-3. Update the base href in your configuration 
+This project is configured to use the custom domain `sujitkumarborse.info`.
+
+### DNS Configuration (GoDaddy)
+
+1. **Log into your GoDaddy account**
+2. **Go to Domain Management** → Select `sujitkumarborse.info`
+3. **Click on "DNS" or "Manage DNS"**
+4. **Add/Update DNS Records:**
+
+   **For GitHub Pages, add these records:**
+   
+   **A Records (for root domain):**
+   - Type: A
+   - Name: @ (or leave blank)
+   - Value: 185.199.108.153
+   - TTL: 600 (or default)
+   
+   - Type: A
+   - Name: @ (or leave blank)
+   - Value: 185.199.109.153
+   - TTL: 600 (or default)
+   
+   - Type: A
+   - Name: @ (or leave blank)
+   - Value: 185.199.110.153
+   - TTL: 600 (or default)
+   
+   - Type: A
+   - Name: @ (or leave blank)
+   - Value: 185.199.111.153
+   - TTL: 600 (or default)
+
+   **CNAME Record (for www subdomain):**
+   - Type: CNAME
+   - Name: www
+   - Value: YOUR_GITHUB_USERNAME.github.io
+   - TTL: 600 (or default)
+
+### GitHub Pages Configuration
+
+1. **Go to your GitHub repository**
+2. **Settings** → **Pages**
+3. **Under "Custom domain"**, enter: `sujitkumarborse.info`
+4. **Check "Enforce HTTPS"** (recommended)
+5. **Save**
+
+### Verification
+
+After DNS propagation (can take up to 48 hours):
+- Your site will be accessible at: `https://sujitkumarborse.info`
+- The CNAME file in the `src` folder ensures the domain is preserved during deployments 

@@ -8,7 +8,7 @@ console.log('🚀 Starting deployment process...');
 
 // Build the application
 console.log('📦 Building application...');
-execSync('ng build --configuration production --base-href=/portfolio-app/', {
+execSync('ng build --configuration production --base-href=/', {
     stdio: 'inherit'
 });
 
