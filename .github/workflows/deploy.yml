@@ -6,6 +6,15 @@ on:
   pull_request:
     branches: [ main ]
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -17,14 +26,23 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '18'
+        node-version: '16'
         cache: 'npm'
         
     - name: Install dependencies
       run: npm ci
       
+    - name: Check Angular CLI version
+      run: npx ng version
+      
     - name: Build Angular app
-      run: npm run build
+      run: npm run build -- --configuration production
+      
+    - name: List build output
+      run: ls -la dist/
+      
+    - name: Check CNAME file
+      run: cat dist/portfolio-app/CNAME
       
     - name: Setup Pages
       uses: actions/configure-pages@v4
