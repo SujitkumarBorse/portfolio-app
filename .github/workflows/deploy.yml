@@ -40,6 +40,10 @@ jobs:
         cd portfolio-app
         npm run build:prod
         
+    - name: Copy CNAME
+      run: |
+        cp src/CNAME dist/portfolio-app/
+        
     - name: Setup Pages
       uses: actions/configure-pages@v4
       
