@@ -31,6 +31,8 @@
                         "assets": [
                             "src/favicon.ico",
                             "src/assets",
+                            "src/CNAME",
+                            "src/404.html",
                             {
                                 "glob": "**/*",
                                 "input": "src/assets",

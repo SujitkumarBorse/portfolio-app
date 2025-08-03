@@ -107,6 +107,43 @@ A modern, responsive portfolio website built with Angular showcasing my skills, 
 ng build --prod
 ```
 
+## 🚀 Deployment
+
+### GitHub Pages with Custom Domain
+
+This project is configured to deploy automatically to GitHub Pages with the custom domain `sujitkumarborse.info`.
+
+#### Setup Instructions:
+
+1. **Enable GitHub Pages**:
+   - Go to your repository settings
+   - Navigate to "Pages" section
+   - Select "GitHub Actions" as the source
+   - The workflow will automatically deploy on push to main branch
+
+2. **Custom Domain Configuration**:
+   - The CNAME file is already configured with `sujitkumarborse.info`
+   - Add your custom domain in GitHub repository settings under Pages
+   - Configure DNS records with your domain provider:
+     - Add a CNAME record pointing to `yourusername.github.io`
+     - Or add an A record pointing to GitHub Pages IP addresses
+
+3. **Automatic Deployment**:
+   - The GitHub workflow (`.github/workflows/deploy.yml`) will:
+     - Build the Angular app
+     - Deploy to GitHub Pages
+     - Handle the custom domain automatically
+
+#### Manual Deployment (if needed):
+
+```bash
+# Build the project
+ng build --prod
+
+# The built files will be in dist/portfolio-app/
+# These can be deployed to any static hosting service
+```
+
 ## 🏗️ Project Structure
 
 ```
