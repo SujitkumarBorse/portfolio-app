@@ -9,7 +9,7 @@
         "test": "ng test",
         "deploy": "ng build --configuration production --base-href=/ && npx angular-cli-ghpages --dir=dist/portfolio-app --no-silent",
         "deploy:custom": "node deploy.js",
-        "build:prod": "ng build --configuration production --base-href=/"
+        "build:prod": "ng build --configuration production --base-href=/portfolio-app/"
     },
     "private": true,
     "dependencies": {
