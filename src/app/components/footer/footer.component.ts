@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
 
+  downloadResume(): void {
+    const link = document.createElement('a');
+    link.href = 'assets/Sujitkumar_Borse_Resume.pdf';
+    link.download = 'Sujitkumar_Borse_Resume.pdf';
+    link.target = '_blank';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
 }
