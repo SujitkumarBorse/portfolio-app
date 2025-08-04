@@ -1,4 +1,4 @@
-<div class="app-container">
+<div class="app-container" [class.dark-theme]="currentTheme === 'dark'" [class.light-theme]="currentTheme === 'light'">
     <app-header></app-header>
     <main class="app-main">
         <app-hero></app-hero>

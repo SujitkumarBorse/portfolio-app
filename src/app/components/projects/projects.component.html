@@ -1,4 +1,4 @@
-<section id="projects" class="projects">
+<section id="projects" class="projects" [ngClass]="{'dark-theme': currentTheme === 'dark', 'light-theme': currentTheme === 'light'}">
     <div class="projects-container">
         <div class="section-header">
             <h2 class="section-title">Featured Projects</h2>

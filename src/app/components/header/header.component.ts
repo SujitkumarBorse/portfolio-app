@@ -1,4 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { ThemeService, Theme } from '../../services/theme.service';
 
 @Component({
   selector: 'app-header',
@@ -9,6 +10,9 @@ export class HeaderComponent implements OnInit {
   isScrolled = false;
   activeSection = 'home';
   isMobileMenuOpen = false;
+  currentTheme: Theme = 'light';
+
+  constructor(private themeService: ThemeService) {}
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
@@ -26,6 +30,9 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.updateActiveSection();
+    this.themeService.theme$.subscribe(theme => {
+      this.currentTheme = theme;
+    });
   }
 
   updateActiveSection() {
@@ -75,5 +82,9 @@ export class HeaderComponent implements OnInit {
 
   toggleMobileMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+
+  toggleTheme() {
+    this.themeService.toggleTheme();
   }
 }

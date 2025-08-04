@@ -1,4 +1,4 @@
-<section id="home" class="hero">
+<section id="home" class="hero" [ngClass]="{'dark-theme': currentTheme === 'dark', 'light-theme': currentTheme === 'light'}">
     <div class="hero-container">
         <div class="hero-content">
             <div class="hero-text">

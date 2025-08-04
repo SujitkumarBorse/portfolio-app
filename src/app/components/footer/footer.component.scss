@@ -4,6 +4,21 @@
     padding: 4rem 0 2rem;
     position: relative;
     overflow: hidden;
+    transition: all 0.4s ease;
+
+    &.dark-theme {
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        color: #e0e0e0;
+
+        &::before {
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23ffffff" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+            opacity: 0.3;
+        }
+
+        &::after {
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        }
+    }
 
     &::before {
         content: '';
@@ -51,6 +66,18 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
+    .dark-theme & {
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+
+        &:hover {
+            background: rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+    }
+
     &:hover {
         transform: translateY(-5px);
         background: rgba(255, 255, 255, 0.15);
@@ -67,6 +94,13 @@
         font-weight: 700;
         position: relative;
 
+        .dark-theme & {
+            background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
         &::after {
             content: '';
             position: absolute;
@@ -77,6 +111,10 @@
             background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
             border-radius: 2px;
             animation: expandWidth 2s ease-out;
+
+            .dark-theme & {
+                background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+            }
         }
     }
 
@@ -90,6 +128,13 @@
         font-weight: 600;
         position: relative;
 
+        .dark-theme & {
+            background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
         &::after {
             content: '';
             position: absolute;
@@ -99,6 +144,10 @@
             height: 2px;
             background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
             border-radius: 1px;
+
+            .dark-theme & {
+                background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+            }
         }
     }
 
@@ -109,9 +158,17 @@
         transition: all 0.3s ease;
         font-weight: 400;
 
+        .dark-theme & {
+            color: rgba(224, 224, 224, 0.9);
+        }
+
         &:hover {
             color: #ffffff;
             transform: translateX(5px);
+
+            .dark-theme & {
+                color: #ffffff;
+            }
         }
     }
 
@@ -143,6 +200,12 @@
                 text-align: center;
                 font-size: 0.9rem;
 
+                .dark-theme & {
+                    color: rgba(224, 224, 224, 0.9);
+                    background: rgba(0, 0, 0, 0.2);
+                    border: 1px solid rgba(255, 255, 255, 0.05);
+                }
+
                 &::before {
                     content: '→';
                     position: absolute;
@@ -157,6 +220,11 @@
                     background: rgba(255, 255, 255, 0.15);
                     border-color: rgba(255, 255, 255, 0.3);
                     padding-left: 2rem;
+
+                    .dark-theme & {
+                        background: rgba(255, 255, 255, 0.1);
+                        border-color: rgba(255, 255, 255, 0.2);
+                    }
 
                     &::before {
                         opacity: 1;
@@ -180,10 +248,20 @@
             min-width: 0;
             overflow: hidden;
 
+            .dark-theme & {
+                background: rgba(0, 0, 0, 0.2);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
             &:hover {
                 background: rgba(255, 255, 255, 0.1);
                 border-color: rgba(255, 255, 255, 0.2);
                 transform: translateX(5px);
+
+                .dark-theme & {
+                    background: rgba(0, 0, 0, 0.3);
+                    border-color: rgba(255, 255, 255, 0.1);
+                }
             }
 
             strong {
@@ -192,6 +270,10 @@
                 font-weight: 600;
                 flex-shrink: 0;
                 font-size: 0.9rem;
+
+                .dark-theme & {
+                    color: #ffffff;
+                }
             }
 
             &::before {
@@ -243,6 +325,11 @@
             overflow: hidden;
             backdrop-filter: blur(10px);
 
+            .dark-theme & {
+                background: rgba(0, 0, 0, 0.3);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
             &::before {
                 content: '';
                 position: absolute;
@@ -259,6 +346,12 @@
                 border-color: rgba(255, 255, 255, 0.4);
                 transform: translateY(-8px) scale(1.1);
                 box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+
+                .dark-theme & {
+                    background: rgba(255, 255, 255, 0.15);
+                    border-color: rgba(255, 255, 255, 0.3);
+                    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+                }
 
                 &::before {
                     left: 100%;
@@ -283,6 +376,10 @@
             color: rgba(255, 255, 255, 0.9);
             line-height: 1.6;
             font-size: 0.95rem;
+
+            .dark-theme & {
+                color: rgba(224, 224, 224, 0.9);
+            }
         }
 
         .download-btn {
@@ -304,6 +401,11 @@
             position: relative;
             overflow: hidden;
 
+            .dark-theme & {
+                background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+                border: 2px solid rgba(255, 255, 255, 0.2);
+            }
+
             &::before {
                 content: '';
                 position: absolute;
@@ -320,6 +422,12 @@
                 border-color: rgba(255, 255, 255, 0.5);
                 transform: translateY(-5px);
                 box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+
+                .dark-theme & {
+                    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+                    border-color: rgba(255, 255, 255, 0.4);
+                    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+                }
 
                 &::before {
                     left: 100%;
@@ -351,6 +459,10 @@
         position: relative;
         border-radius: 1px;
 
+        .dark-theme & {
+            background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
+        }
+
         &::before {
             content: '';
             position: absolute;
@@ -360,6 +472,10 @@
             bottom: 0;
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
             animation: shimmer 3s infinite;
+
+            .dark-theme & {
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            }
         }
     }
 
@@ -375,12 +491,21 @@
         padding: 1.5rem 2rem;
         border: 1px solid rgba(255, 255, 255, 0.1);
 
+        .dark-theme & {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
         p {
             color: rgba(255, 255, 255, 0.9);
             font-size: 0.95rem;
             margin: 0;
             transition: all 0.3s ease;
             font-weight: 500;
+
+            .dark-theme & {
+                color: rgba(224, 224, 224, 0.9);
+            }
 
             &:hover {
                 color: #ffffff;
@@ -392,6 +517,10 @@
                 color: #ffffff;
                 font-weight: 600;
                 text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+                .dark-theme & {
+                    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+                }
             }
         }
     }
