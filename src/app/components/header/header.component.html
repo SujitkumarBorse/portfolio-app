@@ -4,15 +4,17 @@
             <h2>Sujitkumar Borse</h2>
             <span class="title">Angular Developer</span>
         </div>
-        <nav class="nav" [class.mobile-open]="isMobileMenuOpen">
-            <ul class="nav-list">
-                <li><a href="#home" class="nav-link" [class.active]="activeSection === 'home'" (click)="scrollToSection('home')">Home</a></li>
-                <li><a href="#about" class="nav-link" [class.active]="activeSection === 'about'" (click)="scrollToSection('about')">About</a></li>
-                <li><a href="#skills" class="nav-link" [class.active]="activeSection === 'skills'" (click)="scrollToSection('skills')">Skills</a></li>
-                <li><a href="#experience" class="nav-link" [class.active]="activeSection === 'experience'" (click)="scrollToSection('experience')">Experience</a></li>
-                <li><a href="#projects" class="nav-link" [class.active]="activeSection === 'projects'" (click)="scrollToSection('projects')">Projects</a></li>
-                <li><a href="#contact" class="nav-link" [class.active]="activeSection === 'contact'" (click)="scrollToSection('contact')">Contact</a></li>
-            </ul>
+        <div class="nav-container">
+            <nav class="nav" [class.mobile-open]="isMobileMenuOpen">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link" [class.active]="activeSection === 'home'" (click)="scrollToSection('home')">Home</a></li>
+                    <li><a href="#about" class="nav-link" [class.active]="activeSection === 'about'" (click)="scrollToSection('about')">About</a></li>
+                    <li><a href="#skills" class="nav-link" [class.active]="activeSection === 'skills'" (click)="scrollToSection('skills')">Skills</a></li>
+                    <li><a href="#experience" class="nav-link" [class.active]="activeSection === 'experience'" (click)="scrollToSection('experience')">Experience</a></li>
+                    <li><a href="#projects" class="nav-link" [class.active]="activeSection === 'projects'" (click)="scrollToSection('projects')">Projects</a></li>
+                    <li><a href="#contact" class="nav-link" [class.active]="activeSection === 'contact'" (click)="scrollToSection('contact')">Contact</a></li>
+                </ul>
+            </nav>
             <div class="theme-toggle" (click)="toggleTheme()" [attr.aria-label]="currentTheme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'">
                 <svg class="theme-icon sun-icon" [class.active]="currentTheme === 'light'" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2" />
@@ -29,11 +31,11 @@
                     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" />
                 </svg>
             </div>
-        </nav>
-        <div class="mobile-menu-toggle" [class.active]="isMobileMenuOpen" (click)="toggleMobileMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
+            <div class="mobile-menu-toggle" [class.active]="isMobileMenuOpen" (click)="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </div>
 </header>
