@@ -58,7 +58,7 @@ export class ContactComponent implements OnInit, OnDestroy {
     try {
       const response = await this.emailService.sendEmail(this.contactForm);
 
-      console.log('Email sent successfully:', response);
+      // console.log('Email sent successfully:', response);
       this.submitMessage = 'Thank you! Your message has been sent successfully.';
       this.submitSuccess = true;
       this.resetForm();
